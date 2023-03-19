@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fake News Detector | results</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+</head>
+
+<body>
+    <div class="NavBar">
+        <a href="/"> Home </a>
+        <a href="about" style="float:right">About</a>
+    </div>
+
+    <div style="padding-left:15px">
+        {% if fake_prediction == 0%}
+            <h2 style="color:green;">This article is true.</h2>
+        {% elif fake_prediction == 1%}
+            {% if satire_prediction == 1%}
+            <h2 style="color:blue;">This article is fake and is satire.</h2>
+            {% elif satire_prediction == 0%}
+            <h2 style="color:orange;">This article is fake and isn't satire.</h2>
+            {% endif %}
+        {% endif %}
+
+        <br>
+        <br>
+        <a href="/"> Check another article </a>
+    </div>
+</body>
+
+</html>

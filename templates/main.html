@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		function checkSubmission() {
+		  var x = document.forms["articleToCheck"]["article"].value;
+		  if (x == "" || x == null) {
+			alert("Submission cannot be empty.");
+			return false;
+		  }
+		}
+	</script>
+
+	<title>Fake News Detector | main</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+</head>
+
+<body>
+	<div class="NavBar">
+		<a href="/">Home</a>
+		<a href="about" style="float:right">About</a>
+</div>
+
+<div style="padding-left:20px">
+	<h1>
+		Fake News Detector
+	</h1>
+	<br>
+	<form name = "articleToCheck" action="/result" onsubmit="return checkSubmission()" method="POST">
+		<p>
+			Paste your article here:
+		</p>
+		<textarea name="article" rows="20" cols="100"></textarea>
+		<br>
+		<input type="submit" class="btn-info" value="Check article">
+	</form>
+</div>
+
+</body>
+
+</html>
